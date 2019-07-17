@@ -1,4 +1,5 @@
-# nudge
-Combatting the ebbinghaus forgetting curve
+# Nudge
 
-![Nudge the Octopus](nudge-the-octopus.jpg)
+Combat the ebbinghaus forgetting curve
+
+![Nudge the Octopus](images/nudge-the-octopus.jpg)
