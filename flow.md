@@ -5,7 +5,8 @@
 * Nudge staff explains purpose of Nudge to instructor.
 * Nudge staff explains Nudge process to instructor.
 * Instructor agrees to participate in Nudge.
-* Nudge staff has Qualtrics for acquiring student contact data (email/cell phone number)
+* Nudge staff copies Nudge templates for new course.
+* Nudge staff sends Qualtrics survey to acquire student contact data (email/cell phone number)
 * Nudge staff sends student contact acquisition form link to instructor.
 * Nudge staff sends Nudge faculty initial setup form to instructor.
     * course title
