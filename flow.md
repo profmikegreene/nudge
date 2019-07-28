@@ -5,10 +5,38 @@
 * Nudge staff explains purpose of Nudge to instructor.
 * Nudge staff explains Nudge process to instructor.
 * Instructor agrees to participate in Nudge.
-* Nudge staff copies Nudge templates for new course.
-* Nudge staff sends Qualtrics survey to acquire student contact data (email/cell phone number)
-* Nudge staff sends student contact acquisition form link to instructor.
-* Nudge staff sends Nudge faculty initial setup form to instructor.
+* Nudge staff helps instructor complete course setup
+    * Faculty Nudge Initial Setup Form SV_eyAk5iZgcvRw1OB
+    * Form submits entry to Nudge::Nudge Database::Courese
+
+IS THIS NEEDED? CAN'T I JUST USE THE TEMPLATE AND PIPE EVERYTHING IN?
+* !Nudge creates a new group for the course
+
+curl -X POST -H 'X-API-TOKEN: yourtokenhere' -H 'Content-Type: application/json' -d '{
+    "type": "GT_1234567890AbCdE",
+    "name": "Beatles"
+}' 'https://yourdatacenterid.qualtrics.com/API/v3/groups'
+
+* !Nudge staff copies Nudge templates for new course.
+
+curl 'https://yourdatacenterid.qualtrics.com/API/v3/surveys' \
+-X POST \
+-H 'X-API-TOKEN: yourtokenhere' \
+-H 'X-COPY-SOURCE: surveyIdHere' \
+-H 'X-COPY-DESTINATION-OWNER: userIdHere' \
+-H 'Content-Type: application/json' \
+-d '
+    {
+    	"projectName": "My new copied survey"
+    }
+   ' 
+
+* !Nudge staff sends Qualtrics survey to acquire student contact data (email/cell phone number)
+
+    
+
+* !Nudge staff sends student contact acquisition form link to instructor.
+* !Nudge staff sends Nudge faculty initial setup form to instructor.
     * course title
     * may want to add instructor name for survey naming convention
     * course number
@@ -25,17 +53,17 @@
     * cell phone number may have formatting challenges
     * Students may also send NetID (or have it auto-captured via SSO login, ask Kim M), if instructor requests
 * Form sends contact information to Qualtrics.
-* Contact list downloaded as a CSV file.
-* CSV file uploaded to Qualtrics as a contact list for the course Nudges.
+* !Contact list downloaded as a CSV file.
+* !CSV file uploaded to Qualtrics as a contact list for the course Nudges.
 * Qualtrics provides opt-out option for students who change their minds.  
-* System should send a confirmation of the contact list being created to the LI staff or instructor if done programmatically
+* !System should send a confirmation of the contact list being created to the LI staff or instructor if done programmatically
 
 ## Nudge question schedule determined
 
-* Instructor provided schedule for preferred time and day of the week for a weekly reminder question form
+* !Newman/Travis - Instructor provided schedule for preferred time and day of the week for a weekly reminder question form
     * currently handled by Zapier automation (need to set up at beginning of term and manually end at the close of the term) sending the same URL link every time for a single course, but a unique copy of the survey is made per course
     * may consider adding fields to identify either the course or instructor to enable use of a single survey for all instructors throughout the term (or more?)
-* Instructor provided schedule for a preferred time and day of the week for each weekly Nudge to go out to LI staff in the instructor's initial setup form
+* !Newman/Travis - Instructor provided schedule for a preferred time and day of the week for each weekly Nudge to go out to LI staff in the instructor's initial setup form
     * Data: weekday and timestamp should be pulled and used to schedule each Nudge sent to students from this course contact list
     * Destination: the student question survey
 
@@ -47,17 +75,17 @@
 
 ## Nudge questions sent to students
 
-* blank copy made of the student question survey
-* name survey by using: instructor name + "Question" + date
-* enter the question stem, correct answer, and distractors from the instructor question form
-* set answer options to randomized order
-* schedule distribution for the weekday and time provided by instructor
+* !blank copy made of the student question survey
+* !name survey by using: instructor name + "Question" + date
+* !enter the question stem, correct answer, and distractors from the instructor question form
+* !?set answer options to randomized order
+* !schedule distribution for the weekday and time provided by instructor
     * email distribution is sent To: <contact list>
     * other fields
         * Message:  use saved message (which needs to be created in advance, custom for each course)
     * SMS distribution is similar
-* send to course contact list drawn from the student contact survey, including mode of delivery (SMS or email) with a unique URL for each user
-* confirmation of distribution to LI staff or instructor??
+* !send to course contact list drawn from the student contact survey, including mode of delivery (SMS or email) with a unique URL for each user
+* !confirmation of distribution to LI staff or instructor??
 
 ## Students respond to Nudge questions
 
