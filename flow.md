@@ -1,5 +1,9 @@
 # App
 
+List items that start with ! are intended for the app to fulfill.
+List items that start with ? are open questions.
+
+
 ## Instructor agrees to try Nudge
 
 * Nudge staff explains purpose of Nudge to instructor.
