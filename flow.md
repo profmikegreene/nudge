@@ -12,13 +12,16 @@
 IS THIS NEEDED? CAN'T I JUST USE THE TEMPLATE AND PIPE EVERYTHING IN?
 * !Nudge creates a new group for the course
 
+```
 curl -X POST -H 'X-API-TOKEN: yourtokenhere' -H 'Content-Type: application/json' -d '{
     "type": "GT_1234567890AbCdE",
     "name": "Beatles"
 }' 'https://yourdatacenterid.qualtrics.com/API/v3/groups'
+```
 
 * !Nudge staff copies Nudge templates for new course.
 
+```
 curl 'https://yourdatacenterid.qualtrics.com/API/v3/surveys' \
 -X POST \
 -H 'X-API-TOKEN: yourtokenhere' \
@@ -30,6 +33,7 @@ curl 'https://yourdatacenterid.qualtrics.com/API/v3/surveys' \
     	"projectName": "My new copied survey"
     }
    ' 
+```
 
 * !Nudge staff sends Qualtrics survey to acquire student contact data (email/cell phone number)
 
